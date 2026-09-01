@@ -1,6 +1,6 @@
 //Maya ASCII 2027 scene
 //Name: First_Animation.ma
-//Last modified: Mon, Aug 24, 2026 07:34:21 PM
+//Last modified: Tue, Aug 25, 2026 01:56:26 PM
 //Codeset: UTF-8
 requires maya "2027";
 requires "mtoa" "5.6.0";
@@ -10,17 +10,17 @@ fileInfo "product" "Maya 2027";
 fileInfo "version" "2027";
 fileInfo "cutIdentifier" "202603302215-e16e754b0e";
 fileInfo "osv" "Mac OS X 20.4";
-fileInfo "UUID" "AA27B50C-4E49-1765-E8D4-2183357BC326";
+fileInfo "UUID" "04DAEFEF-2949-2BED-4D77-E2970C56849F";
 createNode transform -s -n "persp";
 	rename -uid "D65793DE-924A-19D4-4BC4-EFA16D5237A3";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -1.5396652137041502 0.99389223706451524 84.290552473108406 ;
+	setAttr ".t" -type "double3" -1.1224689226167186 2.8143851436278204 31.032135233984775 ;
 	setAttr ".rpt" -type "double3" 8.091962682178222e-17 7.3213662333461286e-17 -9.8961137023361812e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "B29E6C81-FC41-9A2D-7E4B-5BB521C16A6A";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 84.195207864836235;
+	setAttr ".coi" 30.936790625712604;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -324,8 +324,8 @@ createNode script -n "sceneConfigurationScriptNode";
 	setAttr ".b" -type "string" "playbackOptions -min 7 -max 33 -ast 1 -aet 200 ";
 	setAttr ".st" 6;
 select -ne :time1;
-	setAttr ".o" 13;
-	setAttr ".unw" 13;
+	setAttr ".o" 29;
+	setAttr ".unw" 29;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
@@ -369,6 +369,8 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
+select -ne :ikSystem;
+	setAttr -s 4 ".sol";
 connectAttr "pSphere1_translateX.o" "pSphere1.tx";
 connectAttr "pSphere1_translateY.o" "pSphere1.ty";
 connectAttr "pSphere1_translateZ.o" "pSphere1.tz";
